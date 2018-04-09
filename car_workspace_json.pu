@@ -1,0 +1,74 @@
+@startuml
+
+package "Car_workspace.json" as target_system {
+
+    entity "Intents" as Intents <<I,FFAA00>> {
+        + "Intent"
+        --
+        # "name"
+        "text"
+        "description"
+    }
+
+    entity "Entities" as Entities <<E,FFAA01>> {
+        + "entity"
+        --
+        # "values"
+        "type" : "synonyms" [
+            "value"
+            "metadata"
+            "synoyms" : ["xxxx","xxxx","xxxx",....]
+        ]
+        "metadata"
+        "description"
+        "fuzzy_match"
+    }
+
+    entity "language" as language <<l,FFAA00>> {
+        : "en"
+    }
+
+    entity "metadata" as metadata <<m,FFAA00>> {
+        "api_version" : [
+            "major_version"
+            "minor_version"
+        ]
+    }
+
+    entity "dialog_nodes" as dialog_nodes <<D,FFAA00>> {
+            + "type"
+            --
+            # "title"
+            "output" : [
+                "text" : [
+                    "values" : ["xxxxxxxx"]
+                ]
+            ]
+            "parent"
+            "context"
+            "metadata"
+            "next_step" : [
+                "behavior"
+                "selector"
+                "dialog_node"
+            ]
+            "conditions"
+            "description"
+            "dialog_node"
+            "previous_sibling"
+        }
+
+    entity "workspace_id" as workspace_id <<w,FFAA00>> {
+        "counterexamples" : [
+            "text"
+        ]
+    }
+
+    entity "text" as text <<t,FFAA00>> {
+            "text"
+        ]
+    }
+
+}
+
+@enduml
