@@ -66,7 +66,6 @@ package "Car_workspace.json" as target_system {
 
     entity "text" as text <<t,FFAA00>> {
             "text"
-        ]
     }
 
 }
